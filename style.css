@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap');
+ /*------------- Whole Document---------------- */
+
+body {
+    font-family: 'Bellota Text';
+    font-size: 19px;
+}
+
+.title {
+    font-family: 'Bellota Text';
+    font-size: 19px;
+}
+
+
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Bellota Text';
+  font-size: 24pt;
+}

@@ -1,0 +1,344 @@
+---
+title: "Back to Work with You"
+subtitle: "Did Withdrawing from Federal Unemployment Benifits Increase Employment?"
+author: " by Kathryn Malchow"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    css: style.css
+    code_folding: hide
+    df_print: paged
+    highlight: tango
+    theme: simplex
+---
+
+<br>
+
+#### Introduction
+|    Work-life balance is a consequential issue for those living in the United States. There is a serious lack of regulations that ensure employees maintain a well-rounded life, especially for those who work by an hourly wage.  For example, health care and benefits are frequently denied to employees by cutting hours right below what is considered full-time so that providing these benefits is no longer legally required. Hiring only part-time employees also makes it easier for the company and managers to fill in shifts when needed at the expense of employee income.  Also, there is great variation in regulations across cities that mandate the how far in advance employers must post work schedules (Whitehead, 2021). This makes it hard for employees to plan for things such as activities with friends and family or medical appointments.
+<br>
+When Covid-19 started spreading to the United States (U.S.) it led most states to order either a full close or partial close of most non- essential businesses for varying amounts of time (Cheng et al., 2020). This included businesses such as bars, restaurants, recreational facilities, factories, and schools. An estimated 9.5 million jobs were lost due to Covid-19. The number of job losses was the largest for hourly positions in the leisure and hospitality sector (Gould & Kassa, 2021). Enacted on March 27, 2020, by the Trump administration, the federal government initiated three types of supplemental unemployment benefit programs. State governments had the option of enrolling their citizens into these programs to give them additional unemployment income, which all states did. These federal benefit programs were as follows:
+<br>
+<br>
+•	The Federal Pandemic Unemployment Compensation (PUC) provided an additional $600 per week from April 5 to July 31, 2020. Between August 2020 and December 2020 there was no PUC until the Coronavirus Response and Relief Supplemental Appropriations Act of 2021 reinstated it at a lower rate of $300 per week.
+<br>
+<br>
+•	The Pandemic Unemployment Assistance (PUA) provided benefits to those who were unable to work due to Covid but not eligible for regular unemployment benefits. This applied to people who were self-employed, independent contractors, or those with limited work.
+<br>
+<br>
+•	The Pandemic Emergency Unemployment Compensation (PEUC) provided 13 weeks of additional benefits to those who had already used up the regular and extended unemployment benefits.
+<br>
+<br>
+All three of these programs were further extended through September 6, 2021, with the signing of The American Rescue Plan Act on March 11, 2021 (How Will the Expansion of Unemployment Benefits in Response to the COVID-19 Pandemic Be Recorded in the NIPAs? | U.S. Bureau of Economic Analysis (BEA), n.d.).
+<br>
+<br>
+State governments started easing restrictions on businesses to varying degrees starting in the summer months of 2020. As the weather cooled down and people started spending more time indoors, many states reinstated some level of restrictions later in 2020 and in early 2021, but never as severe as during the Spring of 2020 (Cheng et al., 2020).  Industries have reinstated job opportunities on a large scale, if not back to pre-pandemic levels, but those positions have not been filled as eagerly as imagined. In 2021 and even still today, many companies in the U.S. are struggling to find employees. Some state governors blamed this on the generous unemployment benefits, suggesting that the income people make from unemployment is too high to motivate going back to work. Wyoming’s governor, Mark Gordon, stated “People want to work, and work is available. Incentivizing people not to work is just plain un-American” (Governor Gordon Withdraws Wyoming from COVID-Era Unemployment Programs, n.d.). Gordon and twenty-four other governors with the same opinion decided to withdraw their states from the federal pandemic unemployment benefits early. While the benefits were scheduled to expire on September 6, 2021, some states left in mid or late June and early July hoping to spur citizens to get a job sooner rather than later.
+<br>
+<br>
+Critics to this decision argue that employees are reluctant to return to jobs that don’t pay them a livable wage or give them fair treatment. They contend that employers should better encourage people to work for them with higher wages. Critics also suggest local governments should focus on opening childcare options to pre-pandemic levels, which would enable parents to go back to work instead of forcing people into an economic struggle (Stettner, 2021).
+<br>
+<br>
+Since restrictions have been lifted, unemployment rates have declined over time regardless of whether states had extra unemployment benefits (Bureau of Labor Statistics, n.d.). It is unclear if removing the additional benefits had a significant impact on increasing employment. This analysis will attempt to answer the question: **Did withdrawing from supplemental federal unemployment benefits cause a significant decrease in unemployment?**
+<br>
+<br>
+
+#### Theory
+|    Katz & Meyer (1990) evaluated if unemployment insurance (UI) systems influence how long people remain unemployed. They reference how unemployment spells faced by some European countries in the 1980s, which were more extensive than in the U.S. at that time, can be partially explained by those countries’ liberal UI. For their study, the authors compared the time intervals of unemployment for U.S. citizens who received unemployment benefits to the unemployment intervals of those who didn’t receive UI. They found that the distributions of the two groups’ unemployment spells varied greatly. Those that received benefits had a significant increase in employment around the time that the UI were supposed to expire. The authors also noticed that many recipients obtained jobs several weeks before their benefits were supposed to end. This signifies that the duration of unemployment benefits significantly influenced the behavioral effects of job seekers.  The author’s comparison findings also suggest that UI systems that extend benefit durations cause longer spells of unemployment than UI systems that increase benefit amounts (Katz & Meyer, 1990). This theory is relevant to the situation concerning federal benefits during the Covid pandemic. The U.S. government lowered the PUC amounts from $600 a week to $300 but extended the benefits several times which may have been related to the persistent unemployment.
+<br>
+Bitros & Prodromidis (2004) had similar findings in their study. They re-evaluated the hypothesis that the level of UI benefits a country has influences its unemployment rate. The authors evaluated panel level data of 19 European countries between the time periods of 1970 and 2000 and their results affirm that social benefits have caused an increase in unemployment levels in Europe, especially in the EU-15 countries (Bitros & Prodromidis, 2004).
+<br>
+<br>
+In their study, Barnichon & Figura (2014) find that Emergency and Extended unemployment Benefits (EEB) significantly influenced unemployment duration during the 2008 and 2009 recession in the U.S. The effect of the extended benefits were less impactful to people who were newly unemployed when the benefits started in comparison to those who had been unemployed for a longer period of time (Barnichon & Figura, 2014). Most restrictions to businesses and loss of jobs occurred in mid- 2020 during the Corona virus pandemic, but the unemployment benefits extended over a year past this initial phase. Barnichon & Figura’s findings could suggest that the extended PUC, PUA, and PEUC programs influenced those who were unemployed from the beginning of the pandemic to stay unemployed, whereas those who become unemployed during 2021 were already likely to return to work within a shorter time frame. This might indicate that if a value of decrease in unemployment due to ending the PUC, PUA, and PEUC benefits early is found, it should be reduced to account for those that would have returned to work soon anyways.
+<br>
+<br>
+Due to the current literature on the subject, this paper hypothesizes that ending the PUC, PUA, and PEUC programs early significantly decreased the unemployment rate in the United States. The main mechanism for this analysis is the understanding that without the additional federal benefits, state UI is not enough to be worth remaining unemployed so removing the PUC, PUA, and PEUC coerced people to get jobs. Since the initiation of the federal benefits took place over a year earlier and went through several extensions, the results cannot be attributed to just the ending of benefits. The severities of pandemic policies are used as control variables since they varied from state to state and during different periods of time. These policies are “Closure and Regulation of Schools”, “Restriction and Regulation of Businesses”, and “Lockdown”. The variables “Restriction and Regulation of Businesses”, and “Lockdown” are used because they could account for the availability of jobs and imply cultural attitudes about pandemic safety. “Closure and Regulation of Schools” was included because states that restrict in-person school and childcare might cause parents to remain unemployed since they must spend more time at home taking care of their children.
+<br>
+<br>
+
+#### Data
+|    This analysis used a difference-in-differences method to evaluate the true change in unemployment that occurred for states that withdrew from the PUC, PUA, and PEUC programs early. Two datasets were used to create the panel data; the first was a compilation of seasonally adjusted unemployment percentage rates by state per month between January 2020 and December 2021. The figures for this dataset were retrieved from the U.S. Bureau of Labor Statistics and assembled by me. The states District of Columbia (D.C.) and Minnesota were removed from the dataset due to lack of information. The second dataset was also compiled by me, but the information was extracted from the Corona Net research project dataset. The policy types of “Closure and Regulation of Schools”, “Restriction and Regulation of Businesses”, and “Lockdown” were coded into a new dataset by their level of intensity per month for all U.S. states. Only provincial level regulations were considered since this analysis is looking at state level differences. The “Closure and Regulation of Schools” and “Restriction and Regulation of Businesses” policies were rated on a scale of 0 – 5 with the following interpretations:
+<br>
+<br>
+0 – no regulations<br>
+1 – recommendation only policies/ not mandatory<br>
+2 – open with restrictions<br>
+3 – some schools/businesses open with restrictions, some closed<br>
+4 – very few schools/businesses open<br>
+5 – completely closed (except essential businesses, e.g., grocery stores and lunch pick up at school for students enrolled in the Free and Reduced Lunch program)<br>
+<br>
+<br>
+The “Lockdown” policies were scored from 0 – 3 according to the wording of directives such as “Safer-at-Home” vs. “Stay-at-Home” and the following guidelines:
+<br>
+<br>
+0 – no regulations <br>
+1 – suggestion to stay at home/ not mandatory<br>
+2 – calling for citizens to “limit” (or similar words) their time away from home or asking specific vulnerable people to stay home<br> 
+3 – stay at home orders in place<br>
+<br>
+<br>
+Many of the policies that were coded into the new dataset from the Corona Net data had to be interpreted by the author in a manner that makes their given scores somewhat subjective. For example, there were many miscategorized policies and they were ignored if determined to be irrelevant to this analysis. Also, some policies were coded into the wrong state, and these policies were also discarded instead of attempting to combine them into the correct state. Another issue that occurred multiple times was a policy being coded as “mandatory”, but the having the word “recommend” in the description and visa versa. In this situation, I tried to decipher the true compliance situation. There was also a large amount of missingness within the data. Originally, if it was clear by the most recent policy description that a state never reinstated a regulation, like the ending of a last lockdown for example, then the dates following were coded as 0. If it was unclear whether a policy ended or if there was missing data, it was coded as NA. When attempting to use the Corona Net data as control variables, the large number of NAs caused too many observations to be dropped. The NAs were replaced with 0s, but this made certain states seem as if they were much more lenient with restrictions than in reality.
+<br>
+<br>
+Most states that withdrew from the federal programs early left in mid or late June, but a few withdrew in early July. The states that withdrew in July, Arizona, Indiana, Maryland, and Tennessee, were removed from the dataset to have a cleaner treatment date to evaluate changes from. Montana was also removed because the state implemented return-to-work benefits which could positively bias the results if included. The remaining states in the treatment group, those withdrawing from the benefits in June, were Alabama, Alaska, Arkansas, Florida, Georgia, Idaho, Iowa, Mississippi, Missouri, Nebraska, New Hampshire, North Dakota, Ohio, Oklahoma, South Carolina, South Dakota, Texas, Utah, West Virginia, and Wyoming. The control group, whom the benefits expired on September 6th for, was comprised of the states California, Colorado, Connecticut, Delaware, Hawaii, Illinois, Kansas, Kentucky, Louisiana, Maine, Massachusetts, Michigan, Nevada, New Jersey, New Mexico, New York, North Carolina, Oregon, Pennsylvania, Rhode Island, Vermont, Virginia, Washington, and Wisconsin.
+<br>
+<br>
+
+#### Analysis
+|    First, U.S. unemployment rates were plotted on a line chart by treatment group. Overall, the control states had higher unemployment throughout time. The “treatment”, which is the withdrawal from the benefits, starts at the beginning of July 2021 and is marked by a vertical dashed line. Even though the unemployment rates differ between the two groups before the treatment date, the plot shows that the states have similar trends to each other after April 2020. This demonstrates that the parallel trends assumption may hold. The difference in rates between the two groups is not constant over the entire time frame though. For example, in March 2020 when the pandemic caused a large increase in unemployment the two groups have a smaller difference to each other than later. For this analysis, it was considered similar enough since the data could have been restricted to April 2020 and after.
+<br>
+<br>
+ <div align="right">**Data Wrangling Code Here &downarrow;**</div>
+```{r warning=FALSE, message=FALSE, out.width="100%", fig.show='hide'}
+#load packages
+pacman::p_load(readxl, dplyr, tidyr, tidyverse, ggplot2, kableExtra, stargazer)
+
+#load in datasets
+corona_code <- read_excel("Data/corona_net_coded.xlsx")
+unemployment_rates <- read_excel("Data/unemployment.xlsx")
+
+#make unemployment into long data
+unemployment_rates <- unemployment_rates %>% 
+  pivot_longer(
+  cols = c(Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, D.C., Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Mississippi, Missouri, Montana, Nebraska, Nevada, "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",	"North Dakota",	Ohio,	Oklahoma,	Oregon,	Pennsylvania,	"Rhode Island",	"South Carolina",	"South Dakota",	Tennessee,	Texas,	Utah, Vermont,	Virginia,	Washington,	"West Virginia",	Wisconsin,	Wyoming),
+  names_to = "state",
+  values_to = "unemployment_rate")
+
+#merge datasets
+data = left_join(corona_code, unemployment_rates,
+                 by = c("date", "state"))
+
+#make Corona Net control variables numeric
+data$closure_schools = as.numeric(data$closure_schools)
+data$restrict_business = as.numeric(data$restrict_business)
+data$lockdown = as.numeric(data$lockdown)
+
+#remove states leaving in July instead of June, as well as Montana due to return-to-work benefits
+  #D.C. and Minnesota previously removed due to lack of unemployment data
+data = data[data$state != "Arizona",]
+data = data[data$state != "Indiana",]
+data = data[data$state != "Maryland",]
+data = data[data$state != "Tennessee",]
+data = data[data$state != "Montana",]
+
+
+#reference list for groups
+#####
+#those leaving in June:
+  #Alabama, Alaska, Arkansas, Florida, Georgia, Idaho, Iowa, Mississippi, Nebraska, New Hampshire, North Dakota, Ohio, Oklahoma, South Carolina, South Dakota, Texas, Utah, West Virginia, Wyoming
+
+#those leaving in September:
+  #California, Colorado, Connecticut, Delaware, Hawaii, Illinois, Kansas, Kentucky, Louisiana, Maine, Massachusetts, Michigan, Nevada, "New Jersey", "New Mexico", "New York", "North Carolina", Oregon,	Pennsylvania,	"Rhode Island", Vermont, Virginia, Washington, Wisconsin
+#####
+
+#assign treatment group
+data = data %>% 
+  mutate(treatment = ifelse(state %in% c("Alabama", "Alaska", "Arkansas", "Florida", "Georgia", "Idaho", "Iowa", "Mississippi",  "Nebraska", "New Hampshire", "North Dakota", "Ohio", "Oklahoma", "South Carolina", "South Dakota", "Texas", "Utah", "West Virginia", "Wyoming"), 1, 0))
+
+
+#assign pre and post treatment time
+data = data %>% 
+  mutate(time = ifelse(data$date < '2021-07-01', "pre", "post"))
+
+#make treatment a factor variable
+data$treatment = as.factor(data$treatment)
+
+```
+<br>
+<br>
+
+```{r warning=FALSE, message=FALSE, out.width="100%"}
+#load libraries for theme
+library(ggpomological)
+library(showtext)
+
+#get font
+font_add_google(name = "Bellota Text", family = "Bellota Text") #font that matches my powerpoint
+showtext_auto() #must run this line before graph code for font to work
+
+#graph
+unemployment_graph = data %>% 
+   group_by(treatment, date) %>% 
+   mutate(treat_mean = mean(unemployment_rate)) %>% #make new column for unemployment rate per month
+ggplot(., aes(x = as.Date(date), y = treat_mean, color = treatment))+
+  geom_point()+
+  geom_line(size = 0.85) +
+  geom_vline(xintercept = as.Date("2021-07-01"), linetype = "longdash", color = "grey39", size = 0.45)+ #to mark where policy (treatment) starts
+  scale_y_continuous(labels = function(x) paste0(x, "%"), #put percentage sign after numbers on y axis 
+                     name = "Unemployment Rates") + #Label y axis
+  scale_x_date(limits = as.Date(c("2020-01-01", "2021-09-01")), # set beginning and end dates
+               date_breaks = "3 month", date_minor_breaks = "month", #to see every 3 months labeled but ticks for each month
+               date_labels = "%Y-%m", name = "Date (Jan 2020 - Sep 2021)") + #show month and year for dates and label
+  labs(title = "U.S. Unemployment Trends", #title text
+       subtitle = "By Treatment Group", #subtitle text
+       caption = "Source: U.S. Bureau of Labor Statistics") + #caption text
+  theme_pomological_nobg("Bellota Text", 15) + #theme with font of choice
+  theme(plot.title=element_text(size= 20)) + #title size
+  theme(plot.subtitle=element_text(color="grey39")) + #subtitle color
+  theme(plot.caption=element_text(color="grey39")) + #caption color
+  scale_color_manual(values = c("#828585", "#919c4c"))
+
+#save graph
+ggsave(unemployment_graph, file = "unemployment_graph.png", width = 20, height = 15)
+
+#print
+unemployment_graph
+
+```
+<br>
+<br>
+Next, the distributions of unemployment were graphed by time (pre and post benefit withdrawal) and treatment group. The mean of each group is shown with a vertical dashed line. Like the last graph, this plot displays that the control group had higher unemployment rates before and after the treatment period. It also shows there is a smaller difference in the means between the treatment groups after the treatment date than before. This suggests that the treatment was not significant.
+<br>
+<br>
+```{r warning=FALSE, message=FALSE, out.width="100%"}
+#to get pre before post in facet_grid, must do this:
+data$time_b = factor(data$time, levels=c('pre','post'))
+
+#graph
+data %>% 
+  group_by(time, treatment) %>% 
+  mutate(group_mean = mean(unemployment_rate)) %>% #get means for each group
+ggplot(., aes(x = unemployment_rate, fill = factor(treatment))) + #fill color of density by treatment group
+  geom_vline(aes(xintercept = group_mean), linetype = "longdash", color = "grey39", size = 0.45)+ #to mark mean
+  geom_density(alpha = 0.5, color = "#828585") + #make fill color somewhat see-through
+  scale_fill_manual(name = c("Treatment", "Control"),
+                     values = c("#828585", "#919c4c")) + #set fill colors
+  facet_grid(treatment~time_b) + #put together treatment horizontal, time vertical
+  scale_x_continuous(labels = function(x) paste0(x, "%"), limits = c(0, 20)) + #set x axis numbers and give % sign
+  labs(title = "Distribution of Unemployment Rates", #title text
+       subtitle = "Across Time (with-benefits and post-benefits) and Treatment Groups (0 and 1)", #subtitle text
+       caption = "Source: U.S. Bureau of Labor Statistics") + #caption text
+  theme_pomological_nobg("Bellota Text", 15) +
+  theme(legend.position = "none") +
+  theme(plot.title=element_text(size= 20)) + #title size
+  theme(plot.subtitle=element_text(color="grey39")) + #subtitle color
+  theme(plot.caption=element_text(color="grey39")) + #caption color
+  labs(x = "Monthly Unemployment Percentage", #labels for axes
+       y = "Density")
+
+
+
+```
+<br>
+<br>
+The following table shows the mean unemployment percentages for each treatment group pre and post withdrawal from federal benefits. In the difference column, the change in in time is shown for each treatment group. For the treated states, there was an average decrease in unemployment by 1.73 percent. For the control states there was an average decrease of 2.21 percent. Therefore, the naïve difference and difference estimate is 1.73 minus 2.21, which comes to -0.48 percent.
+<br>
+<br>
+```{r}
+#Table of Monthly Unemployment Rates Across Time (pre-and post-benefits) and Treatment
+
+#find the averages of each category
+subseted = data %>%
+  subset(., date < '2021-09-01') #remove dates after september 2021 (must do in seperate df for next part to work)
+
+#to see averages for all 4 groups  
+average = subseted %>% 
+  group_by(treatment, time) %>%
+  summarize(mean = mean(unemployment_rate, na.rm=TRUE), .groups = "keep")
+
+#put numbers into a table
+table = data.frame("Treatment"=c(1,0),"Pre"=c(5.83,7.63),"Post"=c(4.10, 5.42), Difference= c(1.73, 2.21))
+
+#make the table pretty
+kbl(table, align = "c") %>%
+  kable_styling(bootstrap_options = c("hover")) 
+
+```
+<br>
+<br>
+To add the influence of time into the estimation, each state’s average change in unemployment from pretreatment to post treatment was calculated. Then, the change in unemployment rates were regressed on the treatment. The first column in the regression output table shows a linear regression without any control variables. The result is close the naïve estimate; -0.439 percent. The second column shows the result of the regression with the addition of control variables “Closure and Regulation of Schools”, “Restriction and Regulation of Businesses”, and “Lockdown.” Adding the control variables reduced the effect of the treatment on the outcome, but only down to -0.434.
+<br>
+<br>
+```{r results = 'asis'}
+#first differences on treatment indicator
+#make df to find difference between pre and post benefits by state
+unemployment_df = subseted %>% 
+  group_by(treatment, time, state) %>% # want 4 different means
+  mutate(mean = mean(unemployment_rate, na.rm=TRUE)) %>% #find mean
+  distinct(state, time, .keep_all= TRUE) %>% #remove multiples
+  subset(., select=c("state", "mean")) #keep only state and mean columns
+
+#separate means for each state into pre and post columns
+unemployment_df = data.frame(state = unemployment_df$state, #make new df
+           pre_mean = unemployment_df$mean[c(TRUE, FALSE)], #select first values in mean column
+           post_mean = unemployment_df$mean[c(FALSE, TRUE)])#select second values in mean coulumn
+
+#create df of state names
+states = unemployment_df %>% #make new df
+  distinct(state, .keep_all = FALSE) #remove extra row of state names and only keep that column
+
+#combine state names df and pre post means df
+state_means = cbind(states, unemployment_df) %>% 
+  select(c(1,3,4)) %>% # only select new state name column and 2 mean columns
+  distinct(state, .keep_all = TRUE) #remove duplicate rows
+
+#find change in unemployment rates for each state
+state_means = state_means %>% 
+  mutate(change = pre_mean - post_mean) #find difference in means
+
+#join the change in means df with data df
+data_new = left_join(data, state_means, by = "state")
+
+#run first differences regression
+did_model_nocon = lm(change ~ treatment, data = data_new) #without CN control variables
+did_model_con = lm(change ~ treatment + closure_schools + restrict_business + lockdown, data = data_new) #with controls variables
+
+#print both models
+stargazer(did_model_nocon, did_model_con, title = "Difference in Differences Estimate Without and With Controls", type = "html")
+
+```
+<br>
+<br>
+
+#### Conclusion
+|    According to the difference in differences estimate done in this analysis, the states that withdrew early from the federal unemployment benefits did not significantly decrease their unemployment rates more than the control states. The regression estimate shows that ending the benefits early caused less unemployment decreases by an average of 0.473 percent than not leaving early. Estimate aside, it is clear from the data that the treatment did not have its intended impact. This could be because as time went on, the unemployment rates began leveling out for the treatment group, almost down to pre-Corona percentages by August 2021. This was not the case for the control group, which started out with a higher unemployment rate since March 2020. This is probably due to more restrictions on businesses in the control group states than in the treatment states. All the states that chose to leave early had conservative governors who were less strict with pandemic laws. It was attempted to control these differences in regulations with the Corona Net data. Unfortunately, the states with more regulations in real life did not have more recorded policies in the dataset than the treatment states. In fact, often the conservative states had more recorded polices than liberal states. This analysis could be improved with more accurate and complete control variables.
+<br>
+<br>
+
+#### References
+Barnichon, R., & Figura, A. (2014). The Effects of Unemployment Benefits on   
+Unemployment and Labor Force Participation: Evidence from 35 Years of BenefitsExtensions. In Finance and Economics 
+Discussion Series (No. 2014–65; Finance and   Economics Discussion Series). Board of Governors of the Federal Reserve System (U.S.). https://ideas.repec.org/p/fip/fedgfe/2014-65.html
+<br>
+<br>
+Bitros, G. C., & Prodromidis, K. (2004). Welfare benefits and the rate of 
+unemployment: Some evidence from the European Union in the last thirty years. In   Macroeconomics (No. 0410004;     
+Macroeconomics). University Library of Munich,
+Germany. https://ideas.repec.org/p/wpa/wuwpma/0410004.html
+<br>
+<br>
+Bureau of Labor Statistics. (n.d.). Retrieved May 16, 2022, from     
+https://beta.bls.gov/dataViewer/view/timeseries/LNS14000000
+<br>
+<br>
+Cheng, C., Barceló, J., Hartnett, A., Kubinec, R., & Messerschmidt, L. (2020).
+COVID-19 Government Response Event Dataset (CoronaNet v1.0).
+<br>
+<br>
+Gould, E., & Kassa, M. (2021, May 20). Low-wage, low-hours workers were hit
+hardest in the COVID-19 recession: The State of Working America 2020 employment   report. Economic Policy Institute.    
+https://www.epi.org/publication/swa-2020-employment-report/
+<br>
+<br>
+Governor Gordon Withdraws Wyoming from COVID-era Unemployment Programs. (n.d.).
+Retrieved May 16, 2022, from https://governor.wyo.gov/media/news-releases/2021-news-releases/governor-gordon-
+withdraws-wyoming-from-covid-era-unemployment-programs
+<br>
+<br>
+How will the expansion of unemployment benefits in response to the COVID-19
+pandemic be recorded in the NIPAs? | U.S. Bureau of Economic Analysis (BEA). (n.d.). Retrieved May 13, 2022, from
+https://www.bea.gov/help/faq/1415
+<br>
+<br>
+Katz, L. F., & Meyer, B. D. (1990). The impact of the potential duration of 
+unemployment benefits on the duration of unemployment. Journal of Public     
+Economics, 41(1), 45–72. https://doi.org/10.1016/0047-2727(92)90056-L
+<br>
+<br>
+Stettner, A. (2021, May 13). Fact Sheet: What’s at Stake As States Cancel Federal
+Unemployment Benefits. The Century Foundation.  
+https://tcf.org/content/commentary/fact-sheet-whats-stake-states-cancel-federal- 
+unemployment-benefits/
+<br>
+<br>
+Whitehead, D. (2021, May 18). Predictive scheduling laws: What they cover and how to comply. Workforce.Com.   
+https://workforce.com/news/predictive-scheduling-laws-what-are-they-where-do-they-exist-and-employers-reaction
